@@ -1,14 +1,211 @@
 <!doctype html>
 
 <html>
-  <head>
-    <title>INSERT TITLE HERE!</title>
-    <link rel="stylesheet" href="index.css">
-    <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-  </head>
+<head>
+  <title>A/B Testing</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-  <body>
-    <!-- TODO: put your HTML code here! -->
-  </body>
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+  <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+<nav class="navbar navbar-expand-xl  navbar-light navbar-container sticky-top container-fluid">
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler toggler-style" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="first-nav nav-style nav-link" id="first-nav-id" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="second-nav nav-style nav-link" id="second-nav-id" href="#">Introduction</a>
+      </li>
+      <li class="nav-item">
+        <a class="third-nav nav-style nav-link" id="third-nav-id" href="#">Hypothesis</a>
+      </li>
+      <li class="nav-item">
+        <a class="fourth-nav nav-style nav-link" id="fourth-nav-id" href="#">Data Collection</a>
+      </li>
+      <li class="nav-item">
+        <a class="fifth-nav nav-style nav-link" id="fifth-nav-id" href="#">Conclusions</a>
+      </li>
+      <li class="nav-item">
+        <a class="sixth-nav nav-style nav-link" id="sixth-nav-id" href="#">Takeaways</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class = "flex-container">
+  <section class="target1 container-fluid main-header">
+    <h1 class="text-wrap">A/B Testing</h1>
+    <p class="sub-title">An exploration of A/B testing as a means of quantitatively measuring the user's experience</p>
+    <div class="arrow-container">
+      <a id="scroll-arrow-1" class="section1 first-scroll-arrow page-down-arrow ">
+        <img alt="Arrow Down Icon" src="http://image.flaticon.com/icons/svg/3/3907.svg" class="animated bounce arrow-img">
+      </a>
+    </div>
+
+  </section>
+  <section class="target2 container-fluid section-container">
+    <h2>Introduction</h2>
+    <h5>First, I created two versions of the same interface</h5>
+    <p></p>
+    <div class="btn-md">
+      <a class="btn btn-outline-dark btn-md btn-indent" href="https://stark-stream-84012.herokuapp.com/">Check Out Live Webpage</a>
+    </div>
+    <p></p>
+    <div class="row btn-indent">
+      <div class="column">
+        <img class = "interface-image" src="images/interfaceA.png" style="width:100%">
+        <figcaption class="text-center">Interface A</figcaption>
+      </div>
+      <div class="column">
+        <img class = "interface-image"  src="images/interfaceB.png" style="width:100%">
+        <figcaption class="text-center">Interface B</figcaption>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="target3 container-fluid section-container">
+    <h2>Hypothesis</h2>
+    <h5>Next, I created null and alternative hypotheses based on how long the user took to
+    checkout (time to completion) and how often the user had to return to the main page (return rate)</h5>
+    <div class="btn-indent">
+      <h4>Time To Completion</h4>
+      <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="images/null-hy-time.png">
+          <div class="card-body">
+            <h5 class="card-title">Null Hypothesis</h5>
+            <p class="card-text">Interface A has no faster time to completion than interface B</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="images/alt-hyp-time.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Alternative hypothesis</h5>
+            <p class="card-text"> Interface A has a faster time to completion than interface B</p>
+            <p class="card-text font-italic">
+              Reasoning: each image on interface B takes up more of the viewport, so selecting
+              the proper items takes longer to scroll to </p>
+          </div>
+        </div>
+      </div>
+
+      <h4>Return Rate</h4>
+      <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="images/null-hy-return.png">
+          <div class="card-body">
+            <h5 class="card-title">Null Hypothesis</h5>
+            <p class="card-text">Interface A has no lower return rate than interface B</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="images/alt-hy-return.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Alternative hypothesis</h5>
+            <p class="card-text">Interface A has a lower return rate than interface B</p>
+            <p class="card-text font-italic">
+              Reasoning: because interface B takes longer to scroll through, users
+              likely get impatient, checkout, and have to return for items they need to include </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+  <section class="target4 container-fluid section-container">
+    <div>
+    <h2>Data Collection</h2>
+    <h5>To collect data to disprove/prove these hypotheses I...</h5>
+    <div class="row">
+      <div class="column">
+        <ol>
+          <li>Deployed heroku wesite which displays each interface 50% of the time. </li>
+          <li>Downloaded the logs (snippet featured in pink) generated by the heroku site</li>
+          <li>Synthesized the data by:
+            <ul>
+              <li>subtracting time stamps to find the time to completion </li>
+              <li>counting how many users returned from checkout to the main page</li>
+            </ul>
+          <li>Ran this synthesized data through several scripts that compute the t-test score, t-test p-value,
+          chi<sup>2</sup> value, and chi<sup>2</sup> homogeneity value</li>
+        </ol>
+      </div>
+      <div class="column">
+        <code>
+          AB_TESTING: C 1603143797739 0 0 rbabyjunm
+          AB_TESTING: A 1603143799136 0 0 csjhdac
+          AB_TESTING: B 1603143819048 0 0 bgaiztbn
+          AB_TESTING: A 1603143799136 1603143850672 mp2 csjhdac
+          AB_TESTING: A 1603143799136 1603143851256 mp2 csjhdac
+          AB_TESTING: B 1603143885964 0 0 axdihfhl</code>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="target5 container-fluid section-container">
+    <h2>Conclusions</h2>
+    <h5>
+      <img class = "interface-image"  src="images/infographic.png" style="width:100%">
+    </h5>
+  </section>
+
+  <section class="target6 container-fluid section-container">
+    <h2>Takeaways on the method of A/B testing</h2>
+    <ol>
+      <li><strong>A/B testing limitations that affected results:</strong>
+      <ol>
+        <li><strong>Not enough data</strong> We likely found our results to be insignificant because there isn't enough
+          test data with twenty users to prove anything conclusively. This is a limitation of A/B testing
+          as large amounts of testing data isn't always accessible. </li>
+        <li><strong>Data Collection</strong>
+          Because users were iterating through several iterations of the same website, it is understandable they
+          would spend significantly more time on the version they hadn't seen before (version B). This is a flaw in how
+          the data was collected, and shows the importance of unbiased data collection during A/B testing.
+        </li>
+      </ol>
+      <li><strong>Insights the results have on design principles</strong>
+        <ol>
+          <li> <strong>Affordances</strong>
+            Large images hinder the affordances of the website
+          as having multiple smaller images demonstrate how much more of the site there is to scroll through. This may
+          have led to the higher return rate in interface B, as people got impatient with the length of the website,
+          checked out, and realized they hadn't hit their goal.</li>
+          <li> <strong>Design & Accommodating User Needs</strong>
+            A principle of design is remaining user-centric. In interface B the user's
+            efficiency wasn't prioritized as the website took longer to scroll through,
+            leading to higher time to completion rates and a less effective shopping experience.</li>
+        </ol>
+
+      </li>
+    </ol>
+  </section>
+
+
+</div>
+<script src="myscripts.js"></script>
+</body>
 </html>
+
+
